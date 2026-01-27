@@ -347,6 +347,7 @@ h4 {
 .plan-featured {
     border-color: rgba(79, 172, 254, 0.4);
     transform: scale(1.05);
+    transform-origin: top;
 }
 
 .plan-featured:hover {
@@ -368,12 +369,12 @@ h4 {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .featured-badge {
@@ -453,7 +454,8 @@ h4 {
 .features li::before {
     content: "✓";
     position: absolute;
-    left: 0;
+    left: 0.25rem;
+    top: 0.75rem;
     color: #4facfe;
     font-weight: bold;
     font-size: 1.1rem;
@@ -770,13 +772,84 @@ footer p {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
+/* Accordion Styles - visible on all devices */
+.plan-accordion {
+    display: block;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+/* Desktop accordion styling */
+@media (min-width: 769px) {
+    .plans {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        overflow: visible;
     }
 
-    .tagline {
+    .plan-accordion {
+        flex-shrink: 0;
+        min-width: 340px;
+        max-width: 340px;
+    }
+
+    .plan-header {
+        display: none;
+    }
+
+    .plan-content {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .plan-content .plan {
+        display: flex;
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem 1.75rem;
+        border-radius: 16px;
+        min-height: 900px;
+    }
+
+    /* Show tier headers on desktop with better visual separation */
+    .plan-content .plan>h4 {
+        display: block;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        font-size: 1.6rem;
+    }
+
+    .plan-content .plan>.tier-subtitle {
+        display: block;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Show badges on desktop plan cards */
+    .plan-content .plan>.featured-badge,
+    .plan-content .plan>.coming-soon-badge {
+        display: block;
+    }
+
+    /* Adjust plan-pricing spacing for personalised tier */
+    .plan-featured .plan-pricing {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    h1 {
         font-size: 1rem;
         letter-spacing: 1px;
     }
@@ -797,26 +870,195 @@ footer p {
         font-size: 1.1rem;
     }
 
+    /* Vertical accordion layout for mobile */
     .plans {
-        gap: 1.5rem;
-        padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-x: visible;
+        padding-bottom: 0;
     }
 
-    .plan {
-        min-width: 320px;
-        max-width: 320px;
+    /* Hide desktop plan cards on mobile */
+    .plans>.plan {
+        display: none;
     }
 
-    .plan-featured {
-        transform: scale(1);
+    /* Show accordion on mobile */
+    .plan-accordion {
+        display: block;
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
     }
 
-    .plan-featured:hover {
-        transform: translateY(-10px) scale(1.02);
+    /* Hide inner tier headers on mobile (they're in accordion header) */
+    .plan-content .plan>h4,
+    .plan-content .plan>.tier-subtitle {
+        display: none;
+    }
+
+    /* Hide badges in plan content on mobile (they're in accordion header) */
+    .plan-content .plan>.featured-badge,
+    .plan-content .plan>.coming-soon-badge {
+        display: none;
+    }
+
+    /* Accordion Header */
+    .plan-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .plan-header:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .plan-header:active {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .plan-header-content {
+        flex: 1;
+        position: relative;
+    }
+
+    .plan-header-content h4 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .plan-header-content .tier-subtitle {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Badges in header */
+    .plan-header-content .featured-badge,
+    .plan-header-content .coming-soon-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 0.7rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    /* Accordion Icon */
+    .accordion-icon {
+        margin-left: 1rem;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .accordion-icon svg {
+        display: block;
+        color: var(--primary-color);
+    }
+
+    .plan-header.active .accordion-icon {
+        transform: rotate(180deg);
+    }
+
+    /* Collapsible Content */
+    .plan-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 5;
+    }
+
+    .plan-content.active {
+        max-height: 3000px;
+        /* Large enough for all content */
+    }
+
+    /* Plan inside accordion */
+    .plan-content .plan {
+        display: block;
+        background: transparent;
+        border: none;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        min-width: auto;
+        max-width: none;
+        min-height: auto;
+        backdrop-filter: none;
+        border-radius: 0;
+    }
+
+    .plan-content .plan-featured,
+    .plan-content .plan-coming-soon {
+        background: transparent;
+    }
+
+    /* Features list mobile optimization */
+    .features {
+        margin-bottom: 1.5rem;
+    }
+
+    .features li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+        padding-left: 2rem;
+    }
+
+    .features li::before {
+        font-size: 0.85rem;
+        left: 0.25rem;
+        top: 0.6rem;
+    }
+
+    /* Pricing section mobile optimization */
+    .plan-pricing h5 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .pricing-options {
+        gap: 0.7rem;
+    }
+
+    .pricing-option {
+        padding: 0.75rem 0.9rem;
+        min-height: 46px;
+    }
+
+    .option-term {
+        font-size: 0.9rem;
+    }
+
+    .option-term .discount {
+        font-size: 0.75rem;
+        margin-left: 0.4rem;
+    }
+
+    .option-price {
+        font-size: 1.15rem;
+    }
+
+    .pricing-option.highlight .option-price {
+        font-size: 1.2rem;
     }
 
     .price {
         font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 
     .featured-badge,
@@ -839,6 +1081,53 @@ footer p {
 
     .contact-item strong {
         min-width: auto;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .plan-header {
+        padding: 1.25rem;
+    }
+
+    .plan-header-content h4 {
+        font-size: 1.3rem;
+    }
+
+    .plan-header-content .tier-subtitle {
+        font-size: 0.85rem;
+    }
+
+
+    .plan-content .plan {
+        padding: 1.25rem 1.25rem 0.85rem 1.25rem;
+    }
+
+    .features li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+        padding-left: 2rem;
+    }
+
+    .pricing-option {
+        padding: 0.7rem 0.8rem;
+        min-height: 44px;
+    }
+
+    .option-term {
+        font-size: 0.85rem;
+    }
+
+    .option-price {
+        font-size: 1.1rem;
+    }
+
+    .pricing-option.highlight .option-price {
+        font-size: 1.15rem;
     }
 }
 

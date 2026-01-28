@@ -139,13 +139,13 @@ h3 {
     color: var(--text-bright);
     font-weight: 600;
     position: relative;
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 h3::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -12px;
     top: 50%;
     transform: translateY(-50%);
     width: 4px;
@@ -397,6 +397,10 @@ h4 {
     overflow-x: auto;
     padding-bottom: 1rem;
     scroll-snap-type: x mandatory;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Scrollbar styling */

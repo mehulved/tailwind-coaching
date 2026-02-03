@@ -276,6 +276,12 @@ h4 {
 }
 
 /* Experience Section */
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .experience ul {
     list-style: none;
     padding-left: 0;
@@ -318,6 +324,51 @@ h4 {
 
 .experience li:hover::before {
     transform: translateY(-50%) translateX(5px);
+}
+
+.experience-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid rgba(79, 172, 254, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.experience-image:hover {
+    border-color: rgba(79, 172, 254, 0.6);
+    box-shadow: 0 12px 48px rgba(79, 172, 254, 0.3);
+    transform: translateY(-5px);
+}
+
+.experience-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.experience-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Desktop layout for experience section */
+@media (min-width: 769px) {
+    .experience-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .experience ul {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .experience-image {
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
 }
 
 /* Community Runs Section */

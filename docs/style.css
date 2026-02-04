@@ -371,6 +371,95 @@ h4 {
     }
 }
 
+/* References Section */
+.references {
+    margin-bottom: 5rem;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.reference-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.reference-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--speed-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.reference-card:hover::before {
+    transform: scaleX(1);
+}
+
+.reference-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 172, 254, 0.5);
+    box-shadow: 0 12px 32px rgba(79, 172, 254, 0.2);
+}
+
+.reference-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--speed-gradient);
+    border-radius: 8px;
+    color: white;
+}
+
+.reference-card h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-bright);
+}
+
+.reference-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+/* Desktop layout for references */
+@media (min-width: 769px) {
+    .references-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .references-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /* Community Runs Section */
 .community-runs {
     margin-bottom: 5rem;

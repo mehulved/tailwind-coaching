@@ -460,6 +460,133 @@ h4 {
     }
 }
 
+/* Testimonials Section */
+.testimonials {
+    margin-bottom: 5rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--speed-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    transform: scaleX(1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 172, 254, 0.5);
+    box-shadow: 0 12px 32px rgba(79, 172, 254, 0.2);
+}
+
+.testimonial-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(79, 172, 254, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-quote {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0 0 1.5rem 0;
+    position: relative;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(79, 172, 254, 0.3);
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    font-family: Georgia, serif;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin: 0;
+}
+
+/* Placeholder testimonial cards */
+.testimonial-placeholder {
+    min-height: 300px;
+    justify-content: center;
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+.testimonial-placeholder:hover {
+    opacity: 0.8;
+}
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-light);
+}
+
+.placeholder-content svg {
+    opacity: 0.5;
+}
+
+.placeholder-content p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Desktop layout for testimonials */
+@media (min-width: 769px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /* Community Runs Section */
 .community-runs {
     margin-bottom: 5rem;

@@ -246,7 +246,7 @@
 
         <section class="coaching">
             <h3>Coaching Plans & Pricing</h3>
-            <p class="section-subtitle">Save more with longer commitments</p>
+            <p class="section-subtitle">Minimum 3-month commitment • Save more with lumpsum payments</p>
             <div class="plans">
                 <!-- Focused Plan -->
                 <div class="plan-accordion">
@@ -277,51 +277,65 @@
 
                             <div class="plan-pricing">
                                 <h5>Pricing Options</h5>
-                                <div class="pricing-options">
-                                    <div class="pricing-option">
-                                        <span class="option-term">Running - Monthly</span>
-                                        <span class="option-price">₹5,000</span>
+                                <p class="pricing-note">Minimum 3-month commitment required</p>
+
+                                <!-- Payment Period Toggle -->
+                                <div class="payment-toggle">
+                                    <button class="toggle-option active" data-period="monthly">
+                                        <span class="toggle-label">Monthly</span>
+                                        <span class="toggle-sublabel">Pay per month</span>
+                                    </button>
+                                    <button class="toggle-option" data-period="quarterly">
+                                        <span class="toggle-label">Quarterly</span>
+                                        <span class="toggle-sublabel">Save 10%</span>
+                                    </button>
+                                </div>
+
+                                <!-- Pricing Display -->
+                                <div class="pricing-display">
+                                    <!-- Monthly Pricing -->
+                                    <div class="pricing-tier active" data-tier="monthly">
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Running</span>
+                                            </div>
+                                            <div class="tier-price">₹5,000<span class="price-period">/month</span></div>
+                                        </div>
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Triathlon</span>
+                                            </div>
+                                            <div class="tier-price">₹7,000<span class="price-period">/month</span></div>
+                                        </div>
                                     </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Quarterly <span class="discount">(5%
-                                                off)</span></span>
-                                        <span class="option-price">₹14,250</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Half-Yearly <span class="discount">(10%
-                                                off)</span></span>
-                                        <span class="option-price">₹27,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Yearly <span class="discount">(15%
-                                                off)</span></span>
-                                        <span class="option-price">₹51,000</span>
-                                    </div>
-                                    <div class="pricing-divider"></div>
-                                    <div class="pricing-option">
-                                        <span class="option-term">Triathlon - Monthly</span>
-                                        <span class="option-price">₹7,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Quarterly <span class="discount">(5%
-                                                off)</span></span>
-                                        <span class="option-price">₹19,950</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Half-Yearly <span class="discount">(10%
-                                                off)</span></span>
-                                        <span class="option-price">₹37,800</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Yearly <span class="discount">(15%
-                                                off)</span></span>
-                                        <span class="option-price">₹71,400</span>
+
+                                    <!-- Quarterly Pricing -->
+                                    <div class="pricing-tier" data-tier="quarterly">
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Running</span>
+                                                <span class="savings-badge">Save ₹1,500</span>
+                                            </div>
+                                            <div class="tier-price">₹13,500<span class="price-period"> total</span>
+                                            </div>
+                                            <div class="tier-breakdown">₹4,500/month equivalent</div>
+                                        </div>
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Triathlon</span>
+                                                <span class="savings-badge">Save ₹2,100</span>
+                                            </div>
+                                            <div class="tier-price">₹18,900<span class="price-period"> total</span>
+                                            </div>
+                                            <div class="tier-breakdown">₹6,300/month equivalent</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Personalised Plan -->
                 <div class="plan-accordion">
@@ -352,59 +366,68 @@
 
                             <div class="plan-pricing">
                                 <h5>Pricing Options</h5>
-                                <div class="pricing-options">
-                                    <div class="pricing-option">
-                                        <span class="option-term">Running - Monthly</span>
-                                        <span class="option-price">₹15,000</span>
+                                <p class="pricing-note">Minimum 3-month commitment required</p>
+
+                                <!-- Payment Period Toggle -->
+                                <div class="payment-toggle">
+                                    <button class="toggle-option active" data-period="monthly">
+                                        <span class="toggle-label">Monthly</span>
+                                        <span class="toggle-sublabel">Pay per month</span>
+                                    </button>
+                                    <button class="toggle-option" data-period="quarterly">
+                                        <span class="toggle-label">Quarterly</span>
+                                        <span class="toggle-sublabel">Save 10%</span>
+                                    </button>
+                                </div>
+
+                                <!-- Pricing Display -->
+                                <div class="pricing-display">
+                                    <!-- Monthly Pricing -->
+                                    <div class="pricing-tier active" data-tier="monthly">
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Running</span>
+                                            </div>
+                                            <div class="tier-price">₹15,000<span class="price-period">/month</span>
+                                            </div>
+                                        </div>
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Triathlon</span>
+                                            </div>
+                                            <div class="tier-price">₹20,000<span class="price-period">/month</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Quarterly (3 months) <span
-                                                class="discount">(5%
-                                                off)</span></span>
-                                        <span class="option-price">₹42,750</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Half-Yearly (6 months) <span
-                                                class="discount">(10%
-                                                off)</span></span>
-                                        <span class="option-price">₹81,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Running - Yearly (12 months) <span
-                                                class="discount">(15%
-                                                off)</span></span>
-                                        <span class="option-price">₹1,53,000</span>
-                                    </div>
-                                    <div class="pricing-divider"></div>
-                                    <div class="pricing-option">
-                                        <span class="option-term">Triathlon - Monthly</span>
-                                        <span class="option-price">₹20,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Quarterly (3 months) <span
-                                                class="discount">(5%
-                                                off)</span></span>
-                                        <span class="option-price">₹57,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Half-Yearly (6 months) <span
-                                                class="discount">(10%
-                                                off)</span></span>
-                                        <span class="option-price">₹1,08,000</span>
-                                    </div>
-                                    <div class="pricing-option highlight">
-                                        <span class="option-term">Triathlon - Yearly (12 months) <span
-                                                class="discount">(15%
-                                                off)</span></span>
-                                        <span class="option-price">₹2,04,000</span>
+
+                                    <!-- Quarterly Pricing -->
+                                    <div class="pricing-tier" data-tier="quarterly">
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Running</span>
+                                                <span class="savings-badge">Save ₹4,500</span>
+                                            </div>
+                                            <div class="tier-price">₹40,500<span class="price-period"> total</span>
+                                            </div>
+                                            <div class="tier-breakdown">₹13,500/month equivalent</div>
+                                        </div>
+                                        <div class="tier-option">
+                                            <div class="tier-header">
+                                                <span class="tier-name">Triathlon</span>
+                                                <span class="savings-badge">Save ₹6,000</span>
+                                            </div>
+                                            <div class="tier-price">₹54,000<span class="price-period"> total</span>
+                                            </div>
+                                            <div class="tier-breakdown">₹18,000/month equivalent</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- TEMPORARILY HIDDEN: Customized Plan
+
+                    <!-- TEMPORARILY HIDDEN: Customized Plan
                 <div class="plan-accordion">
                     <div class="plan-header" data-plan="customized">
                         <div class="plan-header-content">
@@ -435,7 +458,7 @@
                     </div>
                 </div>
                 -->
-            </div>
+                </div>
         </section>
 
         <section class="contact">

@@ -61,3 +61,30 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(header, { attributes: true });
     });
 });
+
+// Payment toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButtons = document.querySelectorAll('.toggle-option');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const period = this.dataset.period;
+            const pricingSection = this.closest('.plan-pricing');
+            
+            // Update toggle button states
+            pricingSection.querySelectorAll('.toggle-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // Update pricing tier display
+            pricingSection.querySelectorAll('.pricing-tier').forEach(tier => {
+                tier.classList.remove('active');
+            });
+            const activeTier = pricingSection.querySelector(`[data-tier="${period}"]`);
+            if (activeTier) {
+                activeTier.classList.add('active');
+            }
+        });
+    });
+});

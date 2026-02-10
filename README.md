@@ -10,13 +10,21 @@ Tailwind provides personalized coaching for running and triathlon athletes, with
 
 ```
 tailwind-coaching/
-├── docs/           # Website files (GitHub Pages)
+├── docs/                # Website files (GitHub Pages)
 │   ├── index.html
 │   └── style.css
+├── project-docs/        # Athlete management app documentation
+│   ├── README.md
+│   ├── implementation_plan.md
+│   ├── complete_ui_mockups.md
+│   ├── design_decisions.md
+│   ├── future_roadmap.md
+│   ├── invoice_email_templates.md
+│   └── images/          # UI mockups and screenshots
 └── README.md
 ```
 
-The `docs` folder contains the static website, keeping the repository organized for future backend development.
+The `docs` folder contains the static landing page website. The `project-docs` folder contains comprehensive documentation for the athlete management application (Django backend).
 
 ## Hosting on GitHub Pages
 
@@ -54,6 +62,27 @@ npx serve
 
 Then navigate to `http://localhost:8000` in your browser.
 
+## Athlete Management App Documentation
+
+Comprehensive documentation for the athlete management application is available in the [`project-docs/`](project-docs/) directory:
+
+- **[Implementation Plan](project-docs/implementation_plan.md)** - Complete technical specifications, data models, features, and deployment strategy
+- **[UI Mockups](project-docs/complete_ui_mockups.md)** - All screens (mobile + desktop), invoice states, responsive design specs
+- **[Design Decisions](project-docs/design_decisions.md)** - Architectural choices, technology stack rationale, and key design decisions
+- **[Future Roadmap](project-docs/future_roadmap.md)** - Long-term vision with analytics, insights engine, and phased implementation
+- **[Email Templates](project-docs/invoice_email_templates.md)** - Invoice email templates with HTML design
+
+### Key Features (Planned)
+
+- **Athlete Management** - Profile, subscription, payment tracking
+- **Automated Invoicing** - Indian GST format with conditional GST calculation
+- **Workout Tracking** - Calendar view with 7 color-coded states
+- **Payment Plans** - 8 HSN/SAC codes (RUNFOCUS1MO, TRIPERSONAL1QTR, etc.)
+- **Email Integration** - Automated invoice delivery
+- **Responsive Design** - Mobile-first, works on all devices
+
+**Tech Stack**: Django + PostgreSQL | **Deployment**: Railway.app | **Domain**: app.tailwindrun.com
+
 ## Contact
 
 - Email: mehul@mehulved.com
@@ -61,6 +90,15 @@ Then navigate to `http://localhost:8000` in your browser.
 
 ## Future Enhancements
 
+### Landing Page
 - Add photos and testimonials
 - Implement newsletter signup
 - Add contact form
+
+### Athlete Management App
+See [Future Roadmap](project-docs/future_roadmap.md) for detailed plans including:
+- Analytics dashboard
+- Athlete behavior insights
+- Churn prediction
+- Automated review preparation
+
